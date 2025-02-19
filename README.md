@@ -1,8 +1,8 @@
-BFS-Based Song Recommendation System 🎵
-Overview
+##BFS-Based Song Recommendation System 🎵
+-Overview
 This project implements a Breadth-First Search (BFS) algorithm to generate song recommendations based on user interactions. The dataset consists of users and the songs they have listened to, forming a bipartite graph where users are connected to songs and vice versa. The BFS algorithm explores this graph to suggest new songs based on a user's listening history.
 
-Graph Representation
+-Graph Representation
 The dataset is transformed into an undirected bipartite graph, where:
 
 Users are connected to the songs they have listened to.
@@ -17,7 +17,7 @@ Hop 2: Other users who have listened to those songs.
 Hop 3: New songs that those users have listened to.
 The final output groups recommended songs based on their hop distance from the starting user.
 
-Why Are Some Hops Missing?
+-Why Are Some Hops Missing?
 During BFS traversal, the output sometimes contains only hops = 1 and 3, skipping hop = 2. This occurs due to the bipartite nature of the graph:
 
 Hop 2 represents users, but BFS only records songs as recommendations.
@@ -28,7 +28,7 @@ BFS requires an efficient queue to process nodes in order. The deque (double-end
 
 O(1) time complexity for adding/removing elements from both ends.
 Efficient memory management compared to a standard list.
-Time Complexity Analysis
+-Time Complexity Analysis
 The BFS traversal runs in O(V + E) time, where:
 
 V is the number of users and songs (graph nodes).
